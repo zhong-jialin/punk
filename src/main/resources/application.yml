@@ -1,0 +1,43 @@
+server:
+  port: 9090
+
+# ?????
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: JINX   #
+    password: JINX #
+    url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+  main:
+    allow-circular-references: true
+
+# ??mybatis???xml??
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.punk.entity
+
+# ??
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+##  支付宝沙箱支付配置
+## 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号，在沙箱应用中获取
+#appId:9021000131613727
+## 商户私钥，您的PKCS8格式RSA2私钥，通过开发助手生成的应用私钥
+#privateKey:MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCMX/9XJ1bxy6kArdOcPRQC4Q45WVHsT918a8CVCFv3M3M4h9mpPF7nEh+R3g9pQ0OwKqFkFdIWJ3c94di2UAs/FVsly5gpIv8dgqHUGcJjBziLayl0IY8T8ITmISj9asKTFuutwAn4nPstWPax7SWt9Tin9NlhYRQXD07lKayHK65l5meNqqTw8AdqvdB7xstTKA4A7ewVcC/GNEJJwo+r7VvlF6ZjTAeqosW8nF7Eo73QnJnSmbRvapujI9a9OS2Co93oun+FXb3r1Kx4Tq78JpKByo+/jUxCsOTr0EMhA8xfco5gJNlSokOn/kA3Kul+IkWkBgYLwUc+HcnfbeQ5AgMBAAECggEAOTison9Tzs7hPnidSRQQwzewj6ocXgMUWzKlV1sH+hXMAyBFltoYKYNWwSRPDe6wefB2x5CpigRedChLKc4pN3biJ979UM+GRSZKB2bUuX9pClQNmtxPMaaa1iBwUBUj6cevHK2qouCC9zJLpa3w7R+ID9ccgbiL8vZ3h6zcOmD2cZ+xqg6BK4JGm2hKU720O4NV8/tgs/n9VF7I1sQ6UWeNb49pTSGKUjVCtRLSMLAjum0NJfgkgfMtb4Y6GO4V4PA2rqx4cBwWogNS0r6ulNGptIyqZVzlfppQ5mhbzx051hGrBjWkwWGupy1yoGumt35LhkAPLAaJBlsIXZHsMQKBgQC+2qdbjslgiv0ZG/pUWf7fGYNJKq0YH7DihRPPjL1YVQOoaoWe+fTv9K6oid9gcbKn9eaVTt39KFlW+AlVtr7V0tlF0/APIFY+TJU16JSwzFyKrWawA+pERMVDnyE+cI4eo/VgYYeL9/BvFzxn/x9+nsp0pBac4arGcb8KSElC1QKBgQC8Sld/vK53rL28kThbcf8yFJnvoUITpImUH8S9i3Bvd++WG2DGipzUp2bMv7GWbJnSans5Ag7tS0SFpDeDpkHHMKEExzBtCQCSn5pWOCpJ5O1lIjnuacxhsx7HABFrl7eM1RbE6aG15BYS68WmmfAnUEFMC4szgDgqmoVNT86l1QKBgQCzd7MmYpe1BB3KTcfRKCuGKVyOIeZRKAPSjmc5pVOry428AicSfmO4fPL8o2F9NI1WaeJhhp8y3o1cPbOxeT3snfAYPJqh7ruKq8MnxUSFGDbxZOuKGrRha/W/h9Tf/UF3SKCF+FBY61aZcFUqSfqYu8MPefmVnpNTNkT5602Q3QKBgDatQ+FlEijQcbyLUxlC7j9Fujna0wxPMGBiJUiBcGH+KwWk56Jf6BDcl76HP/OVj8mJgETasyj3PWutdy10nw9PsMJpcUeIYLEzRacZ4jXZE5LVsIrqEB6i3CIfg++BfByaWGVQDtR56msOKjQp6ZIQ/RUvGPoYlrbQbjs4HKMNAoGATVmLP5CBr8IHW7Ht0YjcFFRdxEInLyKy7PwwT6KSjISzHrhv2qQ73s7u8dPm22ogBN9ytVjqSnkjqLM/OMK9ggbD//hWHN2OA+tscEWP2nsOnSlfS6x1aB54xoV9RLusdObDNKx3QuP2nFOUZdgyIIMOYQC6AWv7+XfzGsK8C7Y=
+#
+## 支付宝公钥,在沙箱应用获取，通过应用公钥生成支付宝公钥
+#publicKey:MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsB/A33Lm/qIhRk737LVtcZHf5FtYmHh2kD8xmGF4c9YKUxE21i6AxrY3SJt9BvoT7/FNKFE0yx8dCQ/5cgGPJeimoHNRV+RSRtMLn0jaiZE08bcL5q/4SDLgBoyIX/dMjuCj9CatnDXNybR45/Cb5AXEpW4IgHXlXrsY6ubQA9EYk9s2OVW/nWwWX2RcpLftovs5hEa7Huz911hSVMs66KInI1J+tEs2y6ndaHJNAw/iozGOMsERRzhpyimRKc8lrgiPu2dC66B5rjZLd0elNSdcYIwXLqeGZkWc5Nq4IAr2dIQDeUTA3/pbQTKcqLAaGXZCvUYduYXdHo5DmVDm+wIDAQAB
+## 服务器异步通知页面路径需http://格式的完整路径，不能加?id=123这类自定义参数
+#  notifyUrl:http://localhost:8081/alipay/success
+## 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数
+#returnUrl: http://localhost:8081/alipay/success
+## 签名方式
+#signType: RSA2
+## 字符编码格式
+#charset: utf-8
+## 支付宝网关，在沙箱应用中获取
+#gatewayUrl: https://openapi.alipaydev.com/gateway.do

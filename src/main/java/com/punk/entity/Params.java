@@ -5,6 +5,16 @@ public class Params {
     private String phone;
     private String name;
 
+    private Integer game;
+
+    public Integer getGame() {
+        return game;
+    }
+
+    public void setGame(Integer game) {
+        this.game = game;
+    }
+
     private String comment;
     private String gamename;
 

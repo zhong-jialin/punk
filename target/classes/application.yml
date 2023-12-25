@@ -15,6 +15,9 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.punk.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
 
 # ??
 pagehelper:
@@ -23,6 +26,8 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
 
+
+ip: localhost
 ##  支付宝沙箱支付配置
 ## 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号，在沙箱应用中获取
 #appId:9021000131613727
